@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+
+<!-- 
+Author: Tomas  Bandza
+Description: for development assignment from Addendum Solutions from Swedbank
+Without clear guidelines of Swedbank guides, so doing as is.
+No framework, no templates (except swedbank pay), no 3rd libraries.
+Mostly Pure HTML, CSS, JS
+
+Something googled about Swedbank design. Din't get anyhting with provided task, only PDF. 
+This one ? :)  
+https://design.swedbankpay.com/v/10.14.1/
+https://design.swedbankpay.com/v/10.14.1/get-started/for-developers
+
+-->
+
+<!--
+Assigment
+
+Web developer (Front-end)
+Assignment - create a simple and interactive application form for any Swedbank product (e.g.
+credit card, small loan, car leasing).
+
+Requirements:
+1. The form has an intro part, 5 questions, and a summary part.
+2. One question is visible at a time.
+3. All answers are mandatory. One moves to the next question only after answering the
+previous one.
+4. There is a possibility to move back to the previous question.
+5. All of the following elements are used: radio button, checkbox, drop-down box, textarea.
+6. A tooltip element is used at least once to explain one of the choices.
+7. The form has error messages.
+8. In the summary page all questions and answers are displayed. Data is not saved
+anywhere.
+9. Application form design should correspond to Swedbank’s design guidelines.
+10. No pre-made frameworks or templates are used.
+11. The final result is an archived file which opens a working application form.
+12. The assignment has to be done in one week’s time after receiving the requirements.
+Good luck. Looking forward to reviewing your work!
+ 
+-->
+
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Web developer assigment - small loan application</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://design.swedbankpay.com/v/10.14.1/styles/swedbankpay.css" />
+    <script src="https://design.swedbankpay.com/v/10.14.1/scripts/dg.js" global="true" autoload="true"></script>
+
+</head>
+<body>
+ 
+
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <header>
+                <h1>Investor investing habit questionier form</h1>
+            </header>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <main class="col main-content justify-content-content">
+                <div class="row justify-content-center " id="questioner_main_header_notes">
+                    Please fill in the form below to get a better understanding of your investment habits.
+                </div>
+                <div class="steps" id="questioner_steps">
+                    <ol>
+                        <li id="listStep1">
+                            <div class="steps-number">1</div>Interests
+                        </li>
+                        <li id="listStep2">
+                            <div class="steps-number">2</div>Risks levels
+                        </li>
+                        <li id="listStep3">
+                            <div class="steps-number">3</div>Types of investments
+                        </li>
+                        <li id="listStep4">
+                            <div class="steps-number">4</div>Investment frequency
+                        </li>
+                        <li id="listStep5">
+                            <div class="steps-number">5</div>Notes
+                        </li>
+                    </ol>
+                </div>
+
+
+                <div id="questioner_form" class="row pt-4 pb-3 justify-content-center" >
+                    <form>
+
+                        <!-- Interests  -->
+                        <div class="steps-content" id="step_1_content" >
+                            <div class="form-group mb-4" >
+                                <label for="step_1_content-textarea">Why do interested in investing ?</label>
+                                <input type="text" class="form-control" id="step_1_content-textarea" value>
+                                <div class="help-block"></div>
+                            </div>
+                        </div>
+
+                        <!-- Risks levels -->
+                        <div class="steps-content" id="step_2_content">
+                                <fieldset class="radio-group mb-4"  >
+                                    <legend>How much risk are you willing to take?</legend>
+                                    <div class="radio">
+                                        <input type="radio" id="step_2_content-options-1" name="step_2_content-radio" checked>
+                                        <label for="step_2_content-options-1">Doens't matter</label>
+                                    </div>
+                                    <div class="radio">
+                                        <input type="radio" id="step_2_content-options-2" name="step_2_content-radio">
+                                        <label for="step_2_content-options-2">Beginner</label>
+                                    </div>
+                                    <div class="radio">
+                                        <input type="radio" id="step_2_content-options-3" name="step_2_content-radio">
+                                        <label for="step_2_content-options-3">Advanced</label>
+                                    </div>
+                                    <div class="radio">
+                                        <input type="radio" id="step_2_content-options-4" name="step_2_content-radio">
+                                        <label for="step_2_content-options-4">Master</label>
+                                    </div>
+                                    <div class="radio">
+                                        <input type="radio" id="step_2_content-options-5" name="step_2_content-radio">
+                                        <label for="step_2_content-options-5">Option gambler and in debts :)</label>
+                                    </div>
+                                    <div class="help-block"></div>
+                                </fieldset>
+                        </div>
+
+                        <!-- Types of investments -->
+                        <div class="steps-content" id="step_3_content">
+                            <fieldset class="checkbox-group  mb-4">
+                                <legend>What type of investments you do:</legend>
+                                <div class="checkbox">
+                                    <input type="checkbox" id="step_3_content-radio-check-1" name="step_3_content-checkbox-group"/>
+                                    <label for="step_3_content-radio-check-1">Stocks</label>
+                                </div>
+                                <div class="checkbox">
+                                    <input type="checkbox" id="step_3_content-radio-check-2" name="step_3_content-checkbox-group" />
+                                    <label for="step_3_content-radio-check-2">ETF</label>
+                                </div>
+                                <div class="checkbox">
+                                    <input type="checkbox" id="step_3_content-radio-check-3" name="step_3_content-checkbox-group" />
+                                    <label for="step_3_content-radio-check-3">Funds</label>
+                                </div>
+                                <div class="checkbox">
+                                    <input type="checkbox" id="step_3_content-radio-check-4" name="step_3_content-checkbox-group" />
+                                    <label for="step_3_content-radio-check-4">Bonds</label>
+                                </div>
+                                <div class="checkbox">
+                                    <input type="checkbox" id="step_3_content-radio-check-5" name="step_3_content-checkbox-group"/>
+                                    <label for="step_3_content-radio-check-5">Others</label>
+                                </div>
+                                <div class="help-block"></div>
+                            </fieldset>
+                        </div>
+
+                        <!-- Investment frequency -->
+                        <div class="steps-content" id="step_4_content">
+                            <div class="form-group">
+                                <label for="step_4_content-dropdown-group">Who often you plan make investments ?</label>
+                                <select class="form-control" id="step_4_content-dropdown-group">
+                                    <option value="Blueberry">Once in a year</option>
+                                    <option value="Blackberry">Every month</option>
+                                    <option value="Berryberry">Every week</option>
+                                    <option value="Berryberry">Daily</option>
+                                </select>
+                            </div>
+                            <div class="help-block"></div>
+                        </div>
+
+                        <!-- Notes -->
+                        <div class="steps-content" id="step_5_content">
+                            <div class="form-group mb-4">
+                                <label for="step_5_content-textarea">Add addional notes what you are expecting for addional investment markes in future?</label>
+                                <input type="text" class="form-control" id="step_5_content-textarea" value>
+                                <div class="help-block"></div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between pt-1">
+                            <button class="btn btn-secondary tooltip tooltip-bottom" id="form_back" type="button" onclick="formBack()" >
+                                <i class="arrow_back" aria-hidden="true"></i>
+                                Back<span role="tooltip">Back to previous question</span>
+                            </button>
+                            <button class="btn btn-primary tooltip tooltip-bottom" id="form_foward" type="button"  onclick="formForward()">Next step
+                                <span role="tooltip">To next question</span>
+                            </button>
+                            <button class="btn btn-primary tooltip tooltip-bottom" id="form_summary" type="button"  onclick="formSummary()">Summary
+                                <span role="tooltip">Submit and wiew a summary</span>
+                            </button>
+                            <button class="btn btn-primary tooltip tooltip-bottom" id="form_reset" type="button"  onclick="formReset()">Start again
+                                <span role="tooltip">Start again a questionary</span>
+                            </button>
+                        </div>
+
+
+                    </form>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <script>
+
+        let currentQuestionIndex = 0;
+        const totalQuestions = 5;
+
+        const questionsFormData = [
+            {
+                number : 1,
+                isActive: true,
+                isAnswered: false,
+                containError: false
+            },
+            {
+                number : 2,
+                isActive: false,
+                isAnswered: false,
+                containError: false
+            },
+            {
+                number : 3,
+                isActive: false,
+                isAnswered: false,
+                containError: false
+            },
+            {
+                number : 4,
+                isActive: false,
+                isAnswered: false,
+                containError: false
+            },
+            {
+                number : 5,
+                isActive: false,
+                isAnswered: false,
+                containError: false
+            }
+        ]
+
+
+        function formBack() {
+            const currentStep = getCurrentStep();
+            if (currentStep > 1) {
+                const prevStep = currentStep - 1;
+                const isValid = validateStep(currentStep);
+                if (!isValid) {
+                    return;
+                } else {
+                    setStepAnswared(currentStep);
+                }
+                setActiveStep(prevStep);
+            } else {
+                const isValid = validateStep(currentStep);
+                if (!isValid) {
+                    return;
+                } else {
+                    setStepAnswared(currentStep);
+                }
+            }
+            isFirstStep() ? disableBackButton() : enableBackButton();
+            isAllAnswered();
+            showStepContent();
+        }
+
+        function formForward() {
+            const currentStep = getCurrentStep();
+            if (currentStep < totalQuestions) {
+                const nextStep = currentStep + 1;
+                const isValid = validateStep(currentStep);
+                if (!isValid) {
+                    return;
+                } else {
+                    setStepAnswared(currentStep);
+                }
+                setActiveStep(nextStep);
+            } else if (currentStep === totalQuestions) {
+                const isValid = validateStep(currentStep);
+                if (!isValid) {
+                    return;
+                } else {
+                    setStepAnswared(currentStep);
+                }
+            }
+            isFirstStep() ? disableBackButton() : enableBackButton();
+            isAllAnswered();
+            showStepContent();
+        }
+
+        function isFirstStep() {
+            const currentStep = getCurrentStep();
+            return currentStep === 1;
+        }
+        function isLastStep() {
+            const currentStep = getCurrentStep();
+            return currentStep === totalQuestions;
+        }
+
+        function isAllAnswered() {
+            const isAllAnswered = questionsFormData.every((question) => question.isAnswered);
+            if (isAllAnswered) {
+                showSummaryButton();
+            } else {
+                hideSummaryButton();
+            }
+        }
+
+
+        function disableBackButton() {
+            const backButton = document.getElementById("form_back");
+            backButton.disabled = true;
+        }
+        function enableBackButton() {
+            const backButton = document.getElementById("form_back");
+            backButton.disabled = false;
+        }
+
+        function disableFowardButton() {
+            const fowardButton = document.getElementById("form_foward");
+            fowardButton.disabled = true;
+        }
+        function enableFowardButton() {
+            const fowardButton = document.getElementById("form_foward");
+            fowardButton.disabled = false;
+        }
+
+        function showFowardButton() {
+            const fowardButton = document.getElementById("form_foward");
+            fowardButton.style.display = 'block';
+        }
+        function hideFowardButton() {
+            const fowardButton = document.getElementById("form_foward");
+            fowardButton.style.display = 'none';
+        }
+
+        function showBackButton() {
+            const backButton = document.getElementById("form_back");
+            backButton.style.display = 'block';
+        }
+        function hideBackButton() {
+            const backButton = document.getElementById("form_back");
+            backButton.style.display = 'none';
+        }
+
+        function showSummaryButton() {;
+            const summaryButton = document.getElementById("form_summary");
+            summaryButton.style.display = 'block';
+        }
+        function hideSummaryButton() {
+            const summaryButton = document.getElementById("form_summary");
+            summaryButton.style.display = 'none';
+        }
+
+        function showResetButton() {
+            const resetButton = document.getElementById("form_reset");
+            resetButton.style.display = 'block';
+        }
+        function hideResetButton() {
+            const resetButton = document.getElementById("form_reset");
+            resetButton.style.display = 'none';
+        }
+
+
+        function formSummary() {
+            const summaryHeader = document.getElementById("questioner_main_header_notes");
+            summaryHeader.innerHTML = 'Summary of your answers';
+            const questionerSteps = document.getElementById("questioner_steps");
+            questionerSteps.style.display = 'none';
+            hideFowardButton();
+            hideBackButton();
+            hideSummaryButton();
+            showResetButton();
+
+            questionsFormData.forEach((question) => {
+                const  content = document.getElementById("step_" + question.number + "_content");
+                const  listStepTag = document.getElementById("listStep" + question.number);
+                content.style.display  = 'block';
+            });
+        }
+
+        function formReset() {
+            questionsFormData.forEach((question) => {
+                question.isActive = false;
+                question.isAnswered = false;
+                question.containError = false;
+            });
+            questionsFormData[0].isActive = true;
+            const summaryHeader = document.getElementById("questioner_main_header_notes");
+            summaryHeader.innerHTML = 'Please fill in the form below to get a better understanding of your investment habits.';
+            const questionerSteps = document.getElementById("questioner_steps");
+            questionerSteps.style.display = 'block';
+
+            resetStepContent();
+            showFowardButton();
+            hideSummaryButton();
+            hideResetButton();
+            showStepContent();
+        }
+
+
+        function resetStepContent() {
+            questionsFormData.forEach((question) => {
+                const  content = document.getElementById("step_" + question.number + "_content");
+                const  listStepTag = document.getElementById("listStep" + question.number);
+                listStepTag.classList.remove('steps-completed');
+                listStepTag.classList.remove('steps-ongoing');
+               
+            });
+        }
+
+        function showStepContent() {
+            questionsFormData.forEach((question) => {
+                const  content = document.getElementById("step_" + question.number + "_content");
+                const  listStepTag = document.getElementById("listStep" + question.number);
+                 console.log(listStepTag);
+                if (question.isActive) {
+                    content.style.display  = 'block'; 
+                    if (question.isAnswered) {
+                        listStepTag.classList.add('steps-completed');
+                    } else {
+                        listStepTag.classList.add('steps-ongoing');
+                    }
+                    
+                } else  {
+                    content.style.display   = 'none';
+                    if (question.isAnswered) {
+                        listStepTag.classList.add('steps-completed');
+                        listStepTag.classList.remove('steps-ongoing');
+                    } 
+                }
+            });
+        }
+
+        function setActiveStep(stepNumber) {
+            let oldStep = questionsFormData.find((question) => question.isActive);
+            oldStep.isActive = false;
+            const newStep = questionsFormData.find((question) => question.number === stepNumber);
+            newStep.isActive = true;
+        }
+        
+        function setStepAnswared(stepNumber) {
+            const question = questionsFormData.find((question) => question.number === stepNumber);
+            question.isAnswered = true;
+        }
+
+        function getCurrentStep() {
+            const question = questionsFormData.find((question) => question.isActive);
+            return question.number;
+        }
+
+
+        function validateStep(stepNumber) {
+            const question = questionsFormData.find((question) => question.number === stepNumber);
+            switch (stepNumber) {
+                case 1:
+                    return validateStep1(question);
+                case 2:
+                    return validateStep2(question);
+                case 3:
+                    return validateStep3(question);
+                case 4:
+                    return validateStep4(question);
+                case 5:
+                    return validateStep5(question);
+                default:
+                    console.log('Unknown step number');
+            }
+
+            if (question.isAnswered) {
+                return true;
+            } else {
+                question.containError = true;
+                return false;
+            }
+        }
+
+
+        function showValidationErrorMessageOnGroup(inputElement, errorMessage) {
+            const parentEl = inputElement.parentElement
+            parentEl.classList.add('has-error');
+            const helpBlock = parentEl.getElementsByClassName('help-block')[0];
+            helpBlock.style.display = 'block';
+            helpBlock.innerHTML = '<i class="swepay-icon-error-triangle-filled small" aria-hidden="true"></i>' + errorMessage + '.';
+        }
+
+        function hideValidationErrorMessageOnGroup(inputElement) {
+            const parentEl = inputElement.parentElement
+            parentEl.classList.remove('has-error');
+            const helpBlock = parentEl.getElementsByClassName('help-block')[0];
+            if (helpBlock) {
+                helpBlock.style.display = 'none';
+            } 
+            
+        }
+
+        function validateStep1(question) {
+            const input = document.getElementById("step_1_content-textarea");
+            if (input.value.trim() === '') {
+                showValidationErrorMessageOnGroup(input, 'Please fill in the field');
+                question.containError = true;
+                return false;
+            } else {
+                question.isAnswered = true;
+                hideValidationErrorMessageOnGroup(input);
+                question.containError = false;
+                return true;
+            }
+        }
+
+        function validateStep2(question) {
+            const radios = document.getElementsByName("step_2_content-radio");
+            let isChecked = false;
+            for (let i = 0; i < radios.length; i++) {
+                if (radios[i].checked) {
+                    isChecked = true;
+                    break;
+                }
+            }
+            if (isChecked) {
+                question.isAnswered = true;
+                hideValidationErrorMessageOnGroup(radios[0].parentElement);
+                question.containError = false;
+                return true;
+            } else {
+                question.containError = true;
+                showValidationErrorMessageOnGroup(radios[0].parentElement, 'Please select one option');
+                return false;
+            }
+        }
+
+        function validateStep3  (question) {
+            const checkboxes = document.getElementsByName("step_3_content-checkbox-group");
+            let isChecked = false;
+            for (let i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i].checked) {
+                    isChecked = true;
+                    break;
+                }
+            }
+            if (isChecked) {
+                question.isAnswered = true;
+                hideValidationErrorMessageOnGroup(checkboxes[0].parentElement);
+                question.containError = false;
+                return true;
+            } else {
+                question.containError = true;
+                showValidationErrorMessageOnGroup(checkboxes[0].parentElement, 'Please select at least one option');
+                return false;
+            }
+        }
+
+        function validateStep4(question) {
+            console.log('validateStep4');
+            const select = document.getElementById("step_4_content-dropdown-group");
+            if (select.value === "") {
+                question.containError = true;
+                showValidationErrorMessageOnGroup(select, 'Please select one from list option');
+                return false;
+            } else {
+                question.isAnswered = true;
+                hideValidationErrorMessageOnGroup(select);
+                question.containError = false;
+                return true;
+            }
+        }
+
+        function validateStep5(question) {
+            console.log('validateStep5');
+            const input = document.getElementById("step_5_content-textarea");
+            if (input.value.trim() === '') {
+                question.containError = true;
+                showValidationErrorMessageOnGroup(input, 'Please fill in the field');
+                return false;
+            } else {
+                question.isAnswered = true;
+                hideValidationErrorMessageOnGroup(input);
+                question.containError = false;
+                return true;
+            }
+        }
+
+
+        const router = async () => {
+            hideSummaryButton();
+            hideResetButton();
+            showStepContent();
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            router();
+        });
+ 
+    </script>
+
+</body>
+</html>
